@@ -6,7 +6,7 @@
 #    By: tnard <tnard@student.42lyon.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/02 12:16:46 by tnard             #+#    #+#              #
-#    Updated: 2021/11/05 16:46:26 by tnard            ###   ########lyon.fr    #
+#    Updated: 2021/11/06 09:02:32 by tnard            ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,9 +42,11 @@ $(NAME): $(OBJECTS_PREFIXED)
 all: $(NAME)
 
 clean:
+	$(MAKE) clean -C ./libft
 	rm -rf $(OBJS_DIR)
 
 fclean: clean
+	$(MAKE) fclean -C ./libft
 	rm -f $(NAME)
 
 re: fclean all
