@@ -6,7 +6,7 @@
 /*   By: tnard <tnard@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 12:10:41 by tnard             #+#    #+#             */
-/*   Updated: 2021/11/05 17:24:25 by tnard            ###   ########lyon.fr   */
+/*   Updated: 2021/11/09 16:29:25 by tnard            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,14 +57,7 @@ int	ft_putnbr_base(unsigned int nbr, char *base)
 	}
 	if (n < 2)
 		return (t);
-	if (nbr < 0)
-	{
-		ft_putchar('-');
-		t += ft_strprint(-nbr, base, n);
-	}
 	else
-	{
 		t += ft_strprint(nbr, base, n);
-	}
 	return (t);
 }

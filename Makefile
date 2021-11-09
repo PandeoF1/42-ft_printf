@@ -6,15 +6,15 @@
 #    By: tnard <tnard@student.42lyon.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/02 12:16:46 by tnard             #+#    #+#              #
-#    Updated: 2021/11/06 09:02:32 by tnard            ###   ########lyon.fr    #
+#    Updated: 2021/11/09 16:36:36 by tnard            ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS = ft_printf.c utils/ft_putchar.c utils/ft_putnbr_base.c utils/ft_putnbr.c utils/ft_putstr.c utils/ft_putmemory.c
 
-LIBFT = ./libft/libft.a	
+#LIBFT = ./libft/libft.a	
 
-INCLUDES = -Ift_printf.h
+INCLUDES = #-Ift_print.h
 
 NAME = libftprintf.a
 
@@ -33,20 +33,19 @@ $(OBJS_DIR)%.o : %.c ft_printf.h
 	$(CC) $(CC_FLAGS) $(INCLUDES) -c $< -o $@
 
 $(NAME): $(OBJECTS_PREFIXED)
-	$(MAKE) bonus -C ./libft
-	cp libft/libft.a $(NAME)
+#	$(MAKE) bonus -C ./libft
+#	cp libft/libft.a $(NAME)
 	ar r $(NAME) $(OBJECTS_PREFIXED)
 	echo "libftprintf.a compiled !"
-
 
 all: $(NAME)
 
 clean:
-	$(MAKE) clean -C ./libft
+#	$(MAKE) clean -C ./libft
 	rm -rf $(OBJS_DIR)
 
 fclean: clean
-	$(MAKE) fclean -C ./libft
+#	$(MAKE) fclean -C ./libft
 	rm -f $(NAME)
 
 re: fclean all

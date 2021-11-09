@@ -6,7 +6,7 @@
 /*   By: tnard <tnard@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 10:43:13 by tnard             #+#    #+#             */
-/*   Updated: 2021/11/05 17:24:34 by tnard            ###   ########lyon.fr   */
+/*   Updated: 2021/11/09 16:37:43 by tnard            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 # define FT_PRINTF_H
 
 # include <stdarg.h>
-# include "./libft/libft.h"
+# include <unistd.h>
+//# include "./libft/libft.h"
 
 int				ft_printf(const char *str, ...);
 int				ft_putnbr_base(unsigned int nbr, char *base);
