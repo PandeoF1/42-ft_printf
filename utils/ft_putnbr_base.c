@@ -6,7 +6,7 @@
 /*   By: tnard <tnard@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 12:10:41 by tnard             #+#    #+#             */
-/*   Updated: 2021/11/09 16:29:25 by tnard            ###   ########lyon.fr   */
+/*   Updated: 2021/11/12 13:24:50 by tnard            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,13 +48,10 @@ int	ft_putnbr_base(unsigned int nbr, char *base)
 	int	t;
 
 	t = 0;
-	n = 0;
-	while (base[n])
-	{
+	n = -1;
+	while (base[++n])
 		if ((base[n] == '-' || base[n] == '+' || !ft_check_base(base, base[n])))
 			return (t);
-		n++;
-	}
 	if (n < 2)
 		return (t);
 	else

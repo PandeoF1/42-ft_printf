@@ -6,7 +6,7 @@
 #    By: tnard <tnard@student.42lyon.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/02 12:16:46 by tnard             #+#    #+#              #
-#    Updated: 2021/11/09 16:36:36 by tnard            ###   ########lyon.fr    #
+#    Updated: 2021/11/12 13:27:45 by tnard            ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,26 +22,24 @@ OBJS_DIR = objs/
 OBJS = $(SRCS:.c=.o)
 OBJECTS_PREFIXED = $(addprefix $(OBJS_DIR), $(OBJS))
 
+ECHO = echo "`expr " [\`expr $C '*' 100 / $T\`" : '.*\(....\)$$'`%]"
+
 CC = gcc
 
 CC_FLAGS = -Wall -Werror -Wextra
 
 $(OBJS_DIR)%.o : %.c ft_printf.h
-	mkdir -p $(OBJS_DIR)
-	mkdir -p $(OBJS_DIR)utils
-	echo "Compil: $<"
+	@mkdir -p $(OBJS_DIR)
+	@mkdir -p $(OBJS_DIR)utils
 	$(CC) $(CC_FLAGS) $(INCLUDES) -c $< -o $@
 
 $(NAME): $(OBJECTS_PREFIXED)
-#	$(MAKE) bonus -C ./libft
-#	cp libft/libft.a $(NAME)
 	ar r $(NAME) $(OBJECTS_PREFIXED)
-	echo "libftprintf.a compiled !"
+	@echo "\n\033[0;32mlibftprintf.a compiled !\033[0m\n"
 
 all: $(NAME)
 
 clean:
-#	$(MAKE) clean -C ./libft
 	rm -rf $(OBJS_DIR)
 
 fclean: clean

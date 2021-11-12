@@ -6,14 +6,13 @@
 /*   By: tnard <tnard@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 12:05:50 by tnard             #+#    #+#             */
-/*   Updated: 2021/11/05 12:22:30 by tnard            ###   ########lyon.fr   */
+/*   Updated: 2021/11/12 13:24:52 by tnard            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
 int	ft_putchar(char c)
-{
-	write(1, &c, 1);
-	return (1);
+{	
+	return (write(1, &c, 1));
 }

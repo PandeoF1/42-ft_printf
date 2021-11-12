@@ -6,7 +6,7 @@
 /*   By: tnard <tnard@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 16:31:13 by tnard             #+#    #+#             */
-/*   Updated: 2021/11/09 15:36:01 by tnard            ###   ########lyon.fr   */
+/*   Updated: 2021/11/12 13:24:51 by tnard            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,24 +49,15 @@ int	ft_putmemory(unsigned long long *nbr, char *base)
 	int	t;
 
 	t = 0;
-	n = 0;
-	while (base[n])
-	{
+	n = -1;
+	while (base[++n])
 		if ((base[n] == '-' || base[n] == '+' || !ft_check_base(base, base[n])))
 			return (t);
-		n++;
-	}
 	if (n < 2)
 		return (t);
+	t += ft_putstr("0x");
 	if ((long)nbr < 0)
-	{
-		t += ft_putstr("0x");
-		t += ft_strprint(-nbr[0], base, n);
-	}
-	else
-	{
-		t += ft_putstr("0x");
-		t += ft_strprint(nbr[0], base, n);
-	}
+		nbr[0] = -nbr[0];
+	t += ft_strprint(nbr[0], base, n);
 	return (t);
 }
