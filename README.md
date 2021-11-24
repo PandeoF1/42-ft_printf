@@ -1,5 +1,5 @@
 # [42 ft_printf - Lyon](https://www.42lyon.fr/)
-> User : [tnard](https://profile.intra.42.fr/users/tnard/) - ?%
+> User : [tnard](https://profile.intra.42.fr/users/tnard/) - 100%
 
 ## Header :
 ```` 
